@@ -1,4 +1,5 @@
 Video Demo: https://youtu.be/wHWiHiGKpcw
+
 Description:
 Penguin's Lab is an educational platform that offers a variety of online courses that aim to educate and teach business professionals different technological skills and tools to help them improve their work and develop a new way of working. This idea came while talking with my girlfriend about different business opportunities, and she suggested that this type of platform for people in Peru that sometimes don't have access to these types of tools could be a game changer. Using Python, Flask, SQL, HTML and CSS I decided to make a prototype of the website we would like to offer and see in the market.
 
