@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block main %}
+
+    <h2 style="margin-left: 15px;">My Profile</h2>
+
+    <br>
+    
+    <table class="center">
+        <tr>
+            <td>
+                <img src="https://www.gstatic.com/android/keyboard/emojikitchen/20201001/u1f642/u1f642_u1f49f.png" alt="Profile Image" width="auto" height="auto">
+            </td>
+
+            <td>
+                <h3 style="font-weight: normal;"><b>Name: </b>{{ user_name }} {{ user_lastname}}</h3>
+                <br>
+                <h3 style="font-weight: normal;"><b>Birthday: </b>{{birth_day}} / {{ birth_month}} / {{birth_year}}</h3>
+                <br>
+                <h3 style="font-weight: normal;"><b>Country: </b>{{ country }}</h3>
+                <br>
+                <h3 style="font-weight: normal;"><b>Email: </b>{{ email }}</h3>
+            </td>
+        </tr>
+    </table>
+
+    
+
+{% endblock %}

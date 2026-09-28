@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ selected_course_info[0][1] }}
+{% endblock %}
+
+{% block main %}
+
+    <form action="/selected_course" method="post">
+
+        <input method="post" type="hidden" name="select_course_id" value="{{ selected_course_info[0][0] }}" />
+
+        <h2>{{ selected_course_info[0][1] }}</h2>
+
+        <p>{{ selected_course_info[0][2] }}</p>
+
+        <br> 
+
+        {% if session["user_id"] %}
+            {% if enrolled[0][0] != 1 %}
+                <button type="submit">Enroll</button>
+            {% endif %}
+        {% else %}
+            <p><b>Please log in or register to sign up for this course</b></p>
+        {% endif %}
+
+    </form>
+
+    <br>
+
+    {% if session["user_id"] %}
+        {% if enrolled[0][0] == 1 %}
+            <h3 style="text-align: left;">Part 1: Introduction</h3>
+            <p style="text-align: left;">In this section you will learn the basics of the course. This is a short video that introduces the topic, and shows the most basic functions for you to know what the tools aims to achieve.</p>
+            <iframe width="900" height="506" src="{{ selected_course_info[0][4] }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <br>
+            <br>
+
+            <h3 style="text-align: left;">Part 2: More functions and tools</h3>
+            <p style="text-align: left;">Here, is a more detailed explanation of what the course is about. In this video you will learn a lot about all the different functions and tools inside each programs, the different things you an accomplish and step-by-step guides to create more advanced documents.</p>
+            <iframe width="900" height="506" src="{{ selected_course_info[0][5] }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <br>
+            <br>
+
+            <h3 style="text-align: left;">Full-length in-depth tutorial</h3>
+            <p style="text-align: left;">This is the full tutorial in-depth. More than 2 hours of a full dive into what the program is about. Here, you will learn everything you need to know to take our business development skills to a new level, allowing you to create more advanced tools and visualizations that will guarantee a greater quality of your work.</p>
+            <iframe width="900" height="506" src="{{ selected_course_info[0][6] }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            
+        {% endif %}
+    {% endif %}
+
+    
+{% endblock %}

@@ -1,0 +1,40 @@
+
+{% extends "layout.html" %}
+
+{% block title %}
+    My Courses
+{% endblock %}
+
+{% block main %}
+
+    <h2>My Courses</h2>
+    <br>
+    <hr style="width:50%;text-align:center; margin-left: auto; margin-right: auto; color: black;">
+
+    <br>
+    <br>
+    <br>
+
+    {% for courses in courses_list %}
+
+        <form action="/mycourses" method="post">
+
+            <input method="post" type="hidden" name="select_course" value="{{ courses[2] }}" />
+
+            <h3>{{ courses[1] }}: {{ courses[2] }}</h3>
+
+            <h3?>Date Enrolled: {{ courses[4] }}</h3>
+            <br>
+            <br>
+
+            <button type="submit">Go to course</button>
+    
+            <br>
+            <hr style="width:90%;text-align:center; margin-left: auto; margin-right: auto;">
+            <br>
+
+        </form>
+
+    {% endfor %}
+
+{% endblock %}

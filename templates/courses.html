@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Courses
+{% endblock %}
+
+{% block main %}
+
+    <div class="banner">
+        <div class="transparentbox">
+            <h2>Improve your computer skills with the courses we offer</h2>
+            <h3>Attending one of our courses will help you tu gain the knowledge to improve the quality of your work!</h3>
+        </div>
+    </div>
+
+    <br>
+
+    {% for courses in courses_list %}
+
+        <form action="/courses" method="post">
+            <div class="container">
+                <div class="jumbotron">
+
+                    <input method="post" type="hidden" name="select_course" value="{{ courses[1] }}" />
+
+                    <table class="center">
+                        <tr>
+                            <td>
+
+                                <img alt="Busines logo" src="https://www.gstatic.com/android/keyboard/emojikitchen/20211115/u1f381/u1f381_u1f427.png" width="200px" height="200px"> 
+
+                            </td>
+
+                            <td>
+                                <h3>{{ courses[0] }}: {{ courses[1] }}</h3>
+                                <p style="text-align: justify;">{{ courses[2] }}</p>
+
+                                {% if session["user_id"] %}
+                                    <button type="submit">View Course</button>
+                                {% endif %}
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </form>
+
+    {% endfor %}
+
+
+{% endblock %}

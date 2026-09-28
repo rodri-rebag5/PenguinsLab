@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+
+    <h2>Register</h2>
+
+    <form action="/register" method="post">
+
+        <table style="margin: 0px auto">
+            <tr>
+                <td><h3>Name:</h3></td>
+                <td><h3>Last Name:</h3></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="mb-3">
+                        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="name" name="name" placeholder="Name" type="text">
+                    </div>
+                </td>
+                <td>
+                    <div class="mb-3">
+                        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="last_name" name="last_name" placeholder="Last Name" type="text">
+                    </div>
+                </td>
+            </tr>
+
+        </table>
+        
+        <h3>Email:</h3>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="E-mail" type="text">
+        </div>
+        <h3>Country:</h3>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="country" name="country" placeholder="Country" type="text">
+        </div>
+
+        <h3>Birthday:</h3>
+        <table style="margin: 0px auto">
+            <tr>
+                <td>
+                    <div class="mb-3">
+                        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="birth_day" name="birth_day" placeholder="Day" type="text">
+                    </div>
+                </td>
+                <td>
+                    <div class="mb-3">
+                        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="birth_month" name="birth_month" placeholder="Month" type="text">
+                    </div>
+                </td>
+                <td>
+                    <div class="mb-3">
+                        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="birth_year" name="birth_year" placeholder="Year" type="text">
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <table style="margin: 0px auto">
+            <tr>
+                <td><h3>Password:</h3></td>
+                <td><h3>Confirm Password:</h3></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="mb-3">
+                        <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
+                    </div>
+                </td>
+                <td>
+                    <div class="mb-3">
+                        <input class="form-control mx-auto w-auto" id="confirmation" name="confirmation" placeholder="Confirm Password" type="password">
+                    </div>
+                </td>
+            </tr>
+
+        </table>
+        
+        <button class="btn btn-primary" type="submit">Create Account</button>
+    </form>
+
+{% endblock %}

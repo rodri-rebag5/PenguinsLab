@@ -1,0 +1,98 @@
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block main %}
+
+    <h2><b>Welcome to the Penguin's Lab Homepage</b></h2>
+
+    <table>
+        <tr>
+            <td>
+                <section class="container">
+                    <div class="slider-wrapper">
+                        <div class="slider">
+                            <img id="slide1" alt="excel" src="https://elcomercio.pe/resizer/3wq7NVc-FpdDJZiXKKLsbENvh5I=/1200x800/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/VE4NKQCP55ES5K5LHJAWVGN4N4.webp">
+                            <img id="slide2" alt="python" src="https://codeop.tech/wp-content/uploads/2021/11/artturi-jalli-g5_rxRjvKmg-unsplash-scaled.jpg">
+                            <img id="slide3" alt="java" src="https://ubiqum.com/assets/uploads/2019/07/code-coder-coding-270348.jpg">
+                        </div>
+                        <div class="slider-nav">
+                            <a href="#slide1"></a>
+                            <a href="#slide2"></a>
+                            <a href="#slide3"></a>
+                        </div>
+                    </div>
+                </section>
+
+            </td>
+            <td>
+                <p style="text-align: justify; line-height: 1.5;"><b>Welcome to Penguin's Lab, a learning platform where you will learn everything you need to know to develop your coding and business development skills!</b></p>
+                <p style="text-align: justify; line-height: 1.5;">We provide courses on programming, Microsoft Office tools, web design and much more. Start your free trial today, and check all the plans and benefits just for you!</p>
+            </td>
+        </tr>
+    </table>
+    <br><br>
+
+    {% if not session["user_id"] %}
+
+        <h3>Our plans</h3>
+        <br>
+
+        <table style="height: 300px; width: 1000px; margin-left: auto; margin-right: auto;">
+            <thead>
+                <br>
+                <tr>
+                    <th><h3><b>Basic</b></h3></th>
+                    <th><h3><b>Premium</b></h3></th>
+                    <th><h3><b>Professional</b></h3></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        $5.00/month
+                        <br>
+                        <ul>
+                            <li>Access to all courses</li>
+                        </ul>
+                    </td>
+                        
+                    <td>
+                        $10.00/month
+                        <br>
+                        <ul>
+                            <li>Access to all courses</li>
+                            <li>Live classes with specialists</li>
+                            <li>Access to practical resources</li>
+                        </ul>
+                    </td>
+
+                    <td>
+                        $20.00/month
+                        <br>
+                        <ul>
+                            <li>Access to all courses</li>
+                            <li>Live classes with specialists</li>
+                            <li>Access to practical resources</li>
+                            <li>Personalized group classes</li>
+                            <li>Access to business tools</li>
+                        </ul>
+                    </td>
+
+                </tr>
+                {% if not session["user_id"] %}
+                    <tr>
+                        <td><button type="button"><a href="/register">Register now!</a></button></td>
+                        <td><button type="button"><a href="/register">Register now!</a></button></td>
+                        <td><button type="button"><a href="/register">Register now!</a></button></td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+
+    {% endif %}
+
+{% endblock %}
